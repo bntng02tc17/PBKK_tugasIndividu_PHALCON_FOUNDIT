@@ -8,7 +8,7 @@ a:5:{i:0;s:240:"<!DOCTYPE html>
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title> ";s:5:"title";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:39:" <?php echo $this->tag->getTitle(); ?> ";s:4:"file";s:54:"/home/msyah/foundit/app/views/templates/show_base.volt";s:4:"line";i:11;}}i:1;s:1771:"</title>
+  <title> ";s:5:"title";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:39:" <?php echo $this->tag->getTitle(); ?> ";s:4:"file";s:54:"/home/msyah/foundit/app/views/templates/show_base.volt";s:4:"line";i:11;}}i:1;s:1879:"</title>
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -47,7 +47,9 @@ a:5:{i:0;s:240:"<!DOCTYPE html>
               <li class="nav-item">
                 <a class="nav-link" href="/post/myindex">My Post</a>
               </li>
-              
+              <li class="nav-item">
+                <a class="nav-link" href="/post/new">Buat Post</a>
+              </li>
               
               <li class="nav-item">
                 <a class="nav-link" href="/session/end">Log Out</a>

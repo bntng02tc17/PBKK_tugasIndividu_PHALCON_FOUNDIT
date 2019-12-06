@@ -47,7 +47,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="/post/myindex">My Post</a>
               </li>
-              
+              <li class="nav-item">
+                <a class="nav-link" href="/post/new">Buat Post</a>
+              </li>
               
               <li class="nav-item">
                 <a class="nav-link" href="/session/end">Log Out</a>
@@ -73,7 +75,7 @@
                     <?= $form->label('judul', ['class' => 'control-label']) ?>
                     <div class="controls">
                         <?= $form->render('judul', ['class' => 'form-control']) ?>
-                        <p class="help-block">(required)</p>
+                        <p class="help-block">Contoh : Dompet Hitam BlackBeard</p>
                         <!-- <div class="alert alert-warning" id="email_alert">
                             <strong>Warning!</strong> Please enter your email
                         </div> -->
@@ -83,7 +85,7 @@
                     <?= $form->label('deskripsi', ['class' => 'control-label']) ?>
                     <div class="controls">
                         <?= $form->render('deskripsi', ['class' => 'form-control']) ?>
-                        <p class="help-block">(minimum 8 characters)</p>
+                        <p class="help-block">Sertakan lokasi dan waktu kejadian serta kontak yang dapat dihubungi</p>
                         <!-- <div class="alert alert-warning" id="password_alert">
                             <strong>Warning!</strong> Please provide a valid password
                         </div> -->
@@ -93,7 +95,7 @@
                     <?= $form->label('foto', ['class' => 'control-label']) ?>
                     <div class="controls">
                         <?= $form->render('foto', ['class' => 'form-control']) ?>
-                        <p class="help-block">(minimum 8 characters)</p>
+                        <p class="help-block">(File foto harus PNG)</p>
                         <!-- <div class="alert alert-warning" id="password_alert">
                             <strong>Warning!</strong> Please provide a valid password
                         </div> -->

@@ -35,9 +35,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/post/myindex">My Post</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/post/new">Buat Post</a>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link" href="/session/end">Log Out</a>
           </li>
@@ -59,26 +57,19 @@
                 </strong></p>
                 
               <small>
-                <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    Buat Berita Kehilangan
-  </button>
   
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">Post Berita Kehilangan</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <?= $this->tag->form(['post/create', 'enctype' => 'multipart/form-data']) ?>
-            <fieldset>
-                <div class="control-group">
-                    <?= $form->label('judul', ['class' => 'control-label']) ?> <small>Contoh : Dompet Hitam BlackBeard</small>
+
+              </small>
+            </h1>
+            <hr>
+            <?= $this->tag->form(['post/search']) ?>
+            <p class="text-right">Cari Postingan</p>
+
+                <fieldset>
+
+                  <div class="control-group">
+                      
+                      <small>Cari berdasarkan nama barang yang ingin dicari</small>
                     <div class="controls">
                         <?= $form->render('judul', ['class' => 'form-control']) ?>
                       
@@ -89,7 +80,8 @@
                 </div>
                 <br>
                 <div class="control-group">
-                  <p><?= $form->label('deskripsi', ['class' => 'control-label']) ?> <small>Sertakan lokasi dan waktu kejaidan serta kontak yang dapat dihubungi</small></p>  
+          
+                    <small>Cari berdasarkan deskripsi kehilangan</small>
                     <div class="controls">
                         <?= $form->render('deskripsi', ['class' => 'form-control']) ?>
                         
@@ -98,67 +90,12 @@
                         </div> -->
                     </div>
                 </div>
-                <br>
-                <div class="">
-                    <?= $form->label('foto', ['class' => 'control-label']) ?> <small>Tipe gambar harus PNG</small>
-                    <div class="">
-                        <?= $form->render('foto', ['class' => 'form-control']) ?>
-                        
-                        <!-- <div class="alert alert-warning" id="email_alert">
-                            <strong>Warning!</strong> Please enter your email
-                        </div> -->
-                    </div>
-                </div> 
-                <br>
-                <div class='control-group'>
-                    <?= $this->tag->submitButton(['Post', 'class' => 'btn btn-primary']) ?>
+
+                <div class="control-group">
+                    <?= $this->tag->submitButton(['Search', 'class' => 'btn btn-primary']) ?>
                 </div>
-            
-            </fieldset>
-          <?= $this->tag->endform() ?>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-        </div>
-      </div>
-    </div>
-  </div>
-  
 
-              </small>
-            </h1>
-            <hr>
-            
-            <?= $this->tag->form(['post/search']) ?>
-            <h4 class="text-right">Cari Postingan</h4>
-            <div class="control-group">
-                <!-- <small><?= $searchform->label('judul', ['class' => 'control-label']) ?> </small> -->
-                <small>Cari berdasarkan nama barang</small>
-              <div class="controls">
-                  <?= $form->render('judul', ['class' => 'form-control']) ?>
-                
-                  <!-- <div class="alert alert-warning" id="email_alert">
-                      <strong>Warning!</strong> Please enter your email
-                  </div> -->
-              </div>
-          </div>
-          <br>
-          <div class="control-group">
-              <!-- <small> <?= $searchform->label('deskripsi', ['class' => 'control-label']) ?> </small> -->
-              <small>cari berdasarkan deskripsi kejadian</small>
-              <div class="controls">
-                  <?= $form->render('deskripsi', ['class' => 'form-control']) ?>
-                  
-                  <!-- <div class="alert alert-warning" id="email_alert">
-                      <strong>Warning!</strong> Please enter your email
-                  </div> -->
-              </div>
-          </div>
-
-          <div class="control-group">
-              <?= $this->tag->submitButton(['Search', 'class' => 'btn btn-primary']) ?>
-          </div>
+                </fieldset>
                 <hr>
 
             <?php foreach ($page->items as $post) { ?>

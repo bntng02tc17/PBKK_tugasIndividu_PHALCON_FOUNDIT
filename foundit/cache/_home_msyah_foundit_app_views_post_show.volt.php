@@ -47,7 +47,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="/post/myindex">My Post</a>
               </li>
-              
+              <li class="nav-item">
+                <a class="nav-link" href="/post/new">Buat Post</a>
+              </li>
               
               <li class="nav-item">
                 <a class="nav-link" href="/session/end">Log Out</a>

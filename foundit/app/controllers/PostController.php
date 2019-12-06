@@ -1,6 +1,7 @@
 <?php
 use Phalcon\Mvc\Model\Query;
 use Phalcon\Paginator\Adapter\Model as PaginatorModel;
+use Phalcon\Mvc\Model\Criteria;
 use Phalcon\Paginator\Adapter\NativeArray as PaginatorArray;
 use Phalcon\Paginator\Adapter\QueryBuilder as PaginatorQueryBuilder;
 use Phalcon\Http\Request;
@@ -21,8 +22,57 @@ class PostController extends ControllerBase
     {   
 
     }
+    public function searchAction()
+    {
+        $this->view->form = new PostForm();
+        $numberPage = 1;
+        if ($this->request->isPost()) {
+            $query = Criteria::fromInput(
+                $this->di,
+                "Posts",
+                $this->request->getPost()
+            );
+
+            $this->persistent->searchParams = $query->getParams();
+        } else {
+            $numberPage = $this->request->getQuery("page", "int");
+        }
+
+        $parameters = [];
+        if ($this->persistent->searchParams) {
+            $parameters = $this->persistent->searchParams;
+        }
+
+        $posts = Posts::find($parameters);
+        if (count($posts) == 0) {
+            $this->flash->notice("Pencari tidak menemukan post yang sesuai");
+
+            return $this->dispatcher->forward(
+                [
+                    "controller" => "post",
+                    "action"     => "index",
+                ]
+            );
+        }
+
+        $paginator = new PaginatorModel(
+            [
+                "data"  => $posts,
+                "limit" => 3,
+                "page"  => $numberPage,
+            ]
+        );
+
+        $this->view->page = $paginator->getPaginate();
+        // print_r($this->view->page);
+        // return false;
+    }
+
     public function indexAction()
     { 
+        $this->view->searchform = new PostForm();
+       
+       
         $this->view->form = new PostForm();
         $auth = $this->session->get('auth');
         $this->view->auth = $auth;
@@ -128,7 +178,7 @@ class PostController extends ControllerBase
         {
             if($file->getType() !=='image/png')
             {   
-                $this->flash->error(" Tipe gambar harus PNG");
+                $this->flash->error(" Tipe gambar salah / Tidak ada gambar yang diunggah");
                 return $this->dispatcher->forward(
                     [
                         'controller' => 'post',

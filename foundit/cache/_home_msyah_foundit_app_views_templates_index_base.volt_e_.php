@@ -9,7 +9,7 @@ a:7:{i:0;s:231:"<!DOCTYPE html>
   <meta name="author" content="">
   ";s:5:"title";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:45:"
     <?php echo $this->tag->getTitle(); ?>
-  ";s:4:"file";s:55:"/home/msyah/foundit/app/views/templates/index_base.volt";s:4:"line";i:12;}}i:1;s:1404:"
+  ";s:4:"file";s:55:"/home/msyah/foundit/app/views/templates/index_base.volt";s:4:"line";i:12;}}i:1;s:1504:"
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <!-- Custom styles for this template -->
@@ -35,7 +35,9 @@ a:7:{i:0;s:231:"<!DOCTYPE html>
           <li class="nav-item">
             <a class="nav-link" href="/post/myindex">My Post</a>
           </li>
-          
+          <li class="nav-item">
+            <a class="nav-link" href="/post/new">Buat Post</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="/session/end">Log Out</a>
           </li>
